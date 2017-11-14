@@ -1,0 +1,53 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+        <form method="post" autocomplete="off">
+            <div class="form-group {{ errors.name ? ' has-error' : ''}}">
+                <label for="name">Name</label>
+                <input name="name" type="text" class="form-control" value="">
+                {%   if errors.name %}
+                    <span class="help-block">{{ errors.name | first }} </span>
+                {% endif %}
+            </div>
+            <div class="form-group {{ errors.login ? ' has-error' : ''}}">
+                <label for="login">Login</label>
+                <input name="login" type="text" class="form-control" value="" >
+                {%   if errors.login %}
+                    <span class="help-block">{{ errors.login | first }} </span>
+                {% endif %}
+            </div>
+            <div class="form-group {{ errors.email ? ' has-error' : ''}}">
+                <label for="email">e-mail</label>
+                <input name="email" type="email" class="form-control" value="" >
+                {%   if errors.email %}
+                    <span class="help-block">{{ errors.email | first }} </span>
+                {% endif %}
+            </div>
+            <div class="form-group {{ errors.password ? ' has-error' : ''}}">
+                <label for="password">Name:</label>
+                <input type="password" name="password" id="password" class="form-control">
+                {%   if errors.password %}
+                    <span class="help-block">{{ errors.password | first }} </span>
+                {% endif %}
+            </div>
+            <fieldset disabled>
+                <div class="form-group">
+                    <label for="data ">Registration Date</label>
+                    <input name="data" type="text" class="form-control" value="" >
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <input name="blocked" type="radio" id="block0" value="1">
+                <label for="block0" class="btn btn-disabled " aria-invalid="false">Blocked</label>
+
+                <input name="blocked" type="radio" style="margin-left: 10px" id="block1" value="0" checked>
+                <label for="block1" class="btn btn-success" aria-invalid="false">Enabled</label>
+            </div>
+            <div class="btn-toolbar">
+                <button class="btn"><span class="icon-enable glyphicon glyphicon-ok"></span>&nbsp; Save</button>
+                <button onclick="location.href='/admin/users'" class="btn"><span
+                            class="icon-disable glyphicon glyphicon-remove"></span>&nbsp; Cancel
+                </button>
+            </div>
+        </form>
+{% endblock %}

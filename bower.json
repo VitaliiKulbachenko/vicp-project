@@ -1,0 +1,23 @@
+{
+  "name": "project2.dev",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "componentsDirectory" : "public/components",
+  "dependencies": {
+    "bootstrap": "*",
+    "jquery": "*"
+	}
+}
+
+
+

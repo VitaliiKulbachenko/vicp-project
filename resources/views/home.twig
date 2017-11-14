@@ -1,0 +1,27 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div class="well well-small"><h2 class="module-title nav-header">Logged-in Users</h2>
+        <div class="row-striped">
+            <div class="row-fluid">
+                <div class="span8">
+
+                    <strong class="row-title">
+                        <a href="/administrator/index.php?option=com_users&amp;task=user.edit&amp;id=50"
+                           class="hasTooltip" title="" data-original-title="ID : 50">
+                            Super User</a>
+                    </strong>
+
+                    <small class="small hasTooltip" title="" data-original-title="Location">
+                        Administration
+                    </small>
+                </div>
+                <div class="span4">
+                    <div class="small pull-right hasTooltip" title="" data-original-title="Last Activity">
+                        <span class="icon-calendar" aria-hidden="true"></span> 2017-10-29 09:32
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

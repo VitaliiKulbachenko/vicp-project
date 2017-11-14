@@ -1,0 +1,38 @@
+{% if current_path == '/' %}
+<!-- Sidebar Holder -->
+<nav id="sidebar">
+    <ul class="list-unstyled components">
+        {% for item in menu %}
+            {% if item.blocked == 0 %}
+                <li class="active">
+                    <a href="#{{ item.title }}" data-toggle="collapse"
+                       aria-expanded="false">{{ item.title }}</a>
+                    <ul class="collapse list-unstyled" id="{{ item.title }}">
+                        {% for item2 in subMenu  %}
+                             {% if item2.menu_id == item.menu_id %}
+                                 <li><a href="{{ item2.title_url }}">{{ item2.title }}</a></li>
+                             {% endif %}
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>
+{% endif %}
+
+{% if current_path == '/users' or current_path == '/users/add' %}
+<!-- Sidebar Holder -->
+<nav id="sidebar">
+    <ul class="list-unstyled components">
+        <ul class="list-unstyled">
+            {% for item in subMenuUsers %}
+            <li><a href="{{ item.title_url }}">{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </ul>
+</nav>
+<?php } ?>
+{% endif %}
+
+

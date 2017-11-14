@@ -1,0 +1,14 @@
+
+
+{% if current_path == '/users' %}
+
+
+    <div class="btn-toolbar">
+        <button onclick="location.href='/users/add'" class="btn"><span class="icon-add glyphicon glyphicon-plus"></span>&nbsp; Add</button>
+        <button class="btn"><span class="icon-remove glyphicon glyphicon-minus"></span>&nbsp; Remove</button>
+        <button class="btn"><span class="glyphicon glyphicon-edit"></span>&nbsp; Edit</button>
+        <button class="btn"><span class="icon-enable glyphicon glyphicon-ok"></span>&nbsp; Enable</button>
+        <button class="btn"><span class="icon-disable glyphicon glyphicon-remove"></span>&nbsp; Block</button>
+    </div>
+{% endif %}
+

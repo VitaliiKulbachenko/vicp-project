@@ -1,0 +1,5 @@
+
+/vendor
+/public/components
+.idea
+composer.lock

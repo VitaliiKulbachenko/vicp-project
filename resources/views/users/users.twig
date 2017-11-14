@@ -1,0 +1,85 @@
+{% extends 'templates/app.twig' %}
+
+{% block content %}
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+            <tr>
+                <th width="1%" class="nowrap center">
+                    <input type="checkbox" name="checkall-toggle" value="" class="hasTooltip" title=""
+                           onclick="" data-original-title="Check All Items">
+                </th>
+                <th class="nowrap">
+                    Name
+                </th>
+                <th width="10%" class="nowrap">
+                    Login
+                </th>
+                <th width="5%" class="nowrap center">
+                    Status
+                </th>
+                <th width="10%" class="nowrap">
+                    User Groups
+                </th>
+                <th width="15%" class="nowrap">
+                    Email
+                </th>
+                <th width="13%" class="nowrap">
+                    Last Visit Date
+                </th>
+                <th width="13%" class="nowrap">
+                    Registration Date
+                </th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+                <td colspan="10">
+                    <div>
+                        <input type="hidden" name="limitstart" value="0">
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
+            <tbody>
+            {% for item in users %}
+            <tr class="row0">
+                <td class="center">
+                    <input type="checkbox" id="cb0" name="cid[]" value="50"
+                           onclick="">
+                </td>
+                <td>
+                    {{ item.name }}
+                </td>
+                <td>
+                    {{ item.login }}
+                </td>
+                <td class="center">
+                    {% if item.blocked == 0 %}
+                    <a class="btn btn-micro" title="" data-original-title="Status">
+                        <span class="icon-enable glyphicon glyphicon-ok"></span>
+                    </a>
+                    {% else %}
+                    <a class="btn btn-micro" title="" data-original-title="Status">
+                        <span class="icon-disable glyphicon glyphicon-remove"></span>
+                    </a>
+                    {% endif %}
+                </td>
+                <td>
+                    Group User
+                </td>
+                <td>
+                    {{ item.email }}
+                </td>
+                <td>
+                    {{ item.last_visit }}
+                </td>
+                <td>
+                    {{ item.created_user }}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
